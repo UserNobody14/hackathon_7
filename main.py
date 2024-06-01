@@ -1,5 +1,6 @@
 import os
 from fastapi import FastAPI, HTTPException
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, HttpUrl, validator
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -23,6 +24,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.mount("/", StaticFiles(directory="./frontend/dist", html=True), name="static")
 
 
 class VidGenerationRequest(BaseModel):

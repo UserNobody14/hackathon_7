@@ -3,3 +3,6 @@ __pycache__
 data/**
 keys.txt
 .DS_Store
+outdata/**
+audio_clip_0.mp3
+subtitles_0.srt

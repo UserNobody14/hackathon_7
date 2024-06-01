@@ -32,6 +32,14 @@ def turn_video_and_script_files_into_vectordb(directory):
             if file.endswith(".mp4"):
                 video_file = os.path.join(root, file)
                 script_file = video_file.replace(".mp4", ".txt")
+                possible_script_files = [
+                    video_file.replace(".mp4", ".txt"),
+                    video_file.replace(file, "context.txt"),
+                ]
+                for possible_script_file in possible_script_files:
+                    if os.path.exists(possible_script_file):
+                        script_file = possible_script_file
+                        break
                 if os.path.exists(script_file):
                     print(f"Processing {video_file} and {script_file}")
                     with open(script_file, "r") as f:

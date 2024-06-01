@@ -25,8 +25,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.mount("/", StaticFiles(directory="./frontend/dist", html=True), name="static")
-
 
 class VidGenerationRequest(BaseModel):
     text: str
@@ -57,3 +55,7 @@ async def generate_video(vid: VidGenerationRequest):
         return VidGenerationResponse(video_url=vid_dir2, script=script)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
+
+
+app.mount("/outdata", StaticFiles(directory="./outdata", html=True), name="vids")
+app.mount("/", StaticFiles(directory="./frontend/dist", html=True), name="static")

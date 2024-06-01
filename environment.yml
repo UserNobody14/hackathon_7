@@ -115,7 +115,6 @@ dependencies:
   - traitlets=5.14.3=pyhd8ed1ab_0
   - typing-extensions=4.11.0=py311hca03da5_0
   - typing_extensions=4.11.0=py311hca03da5_0
-  - tzdata=2024a=h04d1e81_0
   - urllib3=2.2.1=py311hca03da5_0
   - wcwidth=0.2.13=pyhd8ed1ab_0
   - wheel=0.43.0=py311hca03da5_0
@@ -134,6 +133,7 @@ dependencies:
       - distro==1.9.0
       - dnspython==2.6.1
       - email-validator==2.1.1
+      - environs==9.5.0
       - faiss-cpu==1.8.0
       - fastapi==0.111.0
       - fastapi-cli==0.0.4
@@ -159,13 +159,17 @@ dependencies:
       - markupsafe==2.1.5
       - marshmallow==3.21.2
       - mdurl==0.1.2
+      - milvus-lite==2.4.6
       - mypy-extensions==1.0.0
       - octoai-sdk==0.10.1
       - openai==1.30.5
       - orjson==3.10.3
+      - pandas==2.2.2
       - pillow==10.3.0
+      - pymilvus==2.4.3
       - python-dotenv==1.0.1
       - python-multipart==0.0.9
+      - pytz==2024.1
       - pyyaml==6.0.1
       - regex==2024.5.15
       - rich==13.7.1
@@ -185,6 +189,7 @@ dependencies:
       - types-pyyaml==6.0.12.20240311
       - types-requests==2.32.0.20240523
       - typing-inspect==0.9.0
+      - tzdata==2024.1
       - ujson==5.10.0
       - uvicorn==0.30.0
       - uvloop==0.19.0

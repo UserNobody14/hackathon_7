@@ -33,9 +33,9 @@ function App() {
   };
 
   return (
-    <>
+    <div>
       {!submitted & !loading && 
-        <div>
+        <>
           <div>
             <img src="/public/logo.png" alt="Logo" style={{ width: '600px', height: 'auto' }} />
           </div>
@@ -93,15 +93,12 @@ function App() {
               Generate an coke advertisement
             </Button>
           </Stack>
-        </div>
+        </>
       }
       {submitted & !loading && 
         <Stack alignItems='center'>
           <Typography fontWeight='bold'>Here&apos;s your short!</Typography>
-          <video width="400" controls style={{ borderRadius: '15px' }}>
-            <source src="/clip.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <video width="400" controls src="/clip.mp4" type="video/mp4"  style={{ borderRadius: '15px' }}/>
           <Button variant="contained" sx={{ textTransform: 'none', mt: 1, bgcolor: 'grey' , '&:hover': {
                 backgroundColor: 'lightgrey',
               },}} onClick={() => setSubmitted(false)}>
@@ -118,7 +115,7 @@ function App() {
           <CircularProgress sx={{color: 'grey'}} />
         </Stack>
       }
-    </>
+    </div>
   );
 }
 
